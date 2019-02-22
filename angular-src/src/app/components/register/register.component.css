@@ -1,0 +1,12 @@
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+.imgcontainer {
+  padding: 10px;
+  display: block;
+  margin-left: 260px;
+  margin-right: auto;
+  width: 35%;
+  margin: auto;
+}
