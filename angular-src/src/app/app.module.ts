@@ -9,11 +9,15 @@ import { RegisterComponent } from './components/register/register.component';
 import {ValidateService} from './components/validate.service';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AuthService} from './auth.service';
+import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

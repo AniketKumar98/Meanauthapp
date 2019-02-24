@@ -1,0 +1,21 @@
+<div *ngIf="user">
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+          <form class="col-12">
+            <div class="form-group">
+             <h1>
+                <br><br><label for="formGroupExampleInput">Hi</label>
+                {{user.name}}!!
+             </h1>
+            </div>
+            <br><br><div class="form-group">
+              <label for="formGroupExampleInput2">Email</label><br>
+                {{user.email}}
+            </div>
+          </form>
+        </div>
+      </div>
+</div>
+<div *ngIf="!user">
+   You can't
+</div>
