@@ -18,7 +18,7 @@ export class AuthService {
         'Authorization': 'my-auth-token'
       })
     };
-    return this.http.post('/users/register', user, httpOptions);
+    return this.http.post('users/register', user, httpOptions);
   }
   authenticateUser(user) {
     const httpOptions = {
@@ -27,7 +27,7 @@ export class AuthService {
         'Authorization': 'my-auth-token'
        })
     };
-    return this.http.post('/users/authenticate', user, httpOptions);
+    return this.http.post('users/authenticate', user, httpOptions);
   }
   getProfile(){
     return JSON.parse(localStorage.getItem('user'));
