@@ -23,15 +23,19 @@ export class LoginComponent implements OnInit {
        username: this.username,
        password: this.password
     };
-   try {
+
+    try {
     this.authService.authenticateUser(user).subscribe(data => {
+       // @ts-ignore
       if(data.success){
+         // @ts-ignore
          this.authService.storeUserData(data.token,data.user);
         this.appc.token=true;
          this.flashMessage.show('LoggedIn',{cssClass:'alert-success',timeout:500});
          this.router.navigate(['/profile']);
       }
       else{
+         // @ts-ignore
         this.flashMessage.show(data.msg,{cssClass:'alert-danger',timeout:2000});
         this.router.navigate(['/login']);
       }

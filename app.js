@@ -8,7 +8,7 @@ const mongoose=require('mongoose');
 const config=require('./config/database');
 const app=express();
 const users=require('./routes/users');
-const port=process.env.port || 8080;
+const port=3000;
 mongoose.connect(config.database);
 mongoose.connection.on('connected',()=>{
     console.log('connected'+config.database);

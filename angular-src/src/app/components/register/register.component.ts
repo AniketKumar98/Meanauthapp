@@ -37,17 +37,22 @@ export class RegisterComponent implements OnInit {
        this.flashmessage.show('Please fill correct email',{cssClass:'alert-danger',timeout:3000});
        return false;
      }
-     this.authservice.registerUser(user).subscribe(data => {
-      debugger
-      if (data.success) {
-        this.flashmessage.show('You are now registered',{cssClass:'alert-success',timeout:3000});
-        this.router.navigate(['/login']);
-       } else {
+     try {
+      this.authservice.registerUser(user).subscribe(data => {
+         // @ts-ignore
+        if (data.success) {
+          this.flashmessage.show('You are now registered',{cssClass:'alert-success',timeout:3000});
+          this.router.navigate(['/login']);
+         } else {
 
-         this.flashmessage.show('Cannot Register',{cssClass:'alert-danger',timeout:3000});
-        this.router.navigate(['/register']);
+           this.flashmessage.show('Cannot Register',{cssClass:'alert-danger',timeout:3000});
+          this.router.navigate(['/register']);
 
-       }
-     });
+         }
+       });
+     } catch (error) {
+
+     }
+
   }
 }
