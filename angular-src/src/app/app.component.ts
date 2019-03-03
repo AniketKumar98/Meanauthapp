@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private flashmessage:FlashMessagesService,
               private authservice:AuthService,
               private router:Router){
-
+                this.router.navigate(['/home']);
               }
   Logout(){
     this.token=false;
