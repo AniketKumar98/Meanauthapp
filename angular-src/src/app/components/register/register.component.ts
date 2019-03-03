@@ -38,12 +38,15 @@ export class RegisterComponent implements OnInit {
        return false;
      }
      this.authservice.registerUser(user).subscribe(data => {
-       if (data.success) {
+      debugger
+      if (data.success) {
         this.flashmessage.show('You are now registered',{cssClass:'alert-success',timeout:3000});
         this.router.navigate(['/login']);
        } else {
-        this.flashmessage.show('Cannot Register',{cssClass:'alert-danger',timeout:3000});
+
+         this.flashmessage.show('Cannot Register',{cssClass:'alert-danger',timeout:3000});
         this.router.navigate(['/register']);
+
        }
      });
   }
